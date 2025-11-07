@@ -159,6 +159,7 @@ export function CreateChartDialog({ isOpen, onClose, columns, onCreateChart }: C
                 onChange={(e) => setXColumn(e.target.value)}
                 className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
               >
+                <option value="">-- Select a column --</option>
                 {columns.map((col) => (
                   <option key={col} value={col}>{col}</option>
                 ))}
@@ -175,6 +176,7 @@ export function CreateChartDialog({ isOpen, onClose, columns, onCreateChart }: C
                   onChange={(e) => setYColumn(e.target.value)}
                   className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 >
+                  <option value="">-- Select a column --</option>
                   {columns.map((col) => (
                     <option key={col} value={col}>{col}</option>
                   ))}
@@ -192,7 +194,7 @@ export function CreateChartDialog({ isOpen, onClose, columns, onCreateChart }: C
                 onChange={(e) => setGroupColumn(e.target.value)}
                 className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
               >
-                <option value="">None</option>
+                <option value="">-- Select a column --</option>
                 {columns.map((col) => (
                   <option key={col} value={col}>{col}</option>
                 ))}

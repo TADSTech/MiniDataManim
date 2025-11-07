@@ -71,12 +71,13 @@ export function ColumnSelectDialog({ isOpen, onClose, columns, onSelect }: Colum
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Select Column for Statistics">
       <div className="mb-6">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -109,12 +110,13 @@ export function SortDialog({ isOpen, onClose, columns, onSort }: SortDialogProps
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Sort Data">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -185,12 +187,13 @@ export function FilterDialog({ isOpen, onClose, columns, onFilter }: FilterDialo
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Filter Data">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -198,11 +201,11 @@ export function FilterDialog({ isOpen, onClose, columns, onFilter }: FilterDialo
       </div>
 
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Operator</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Operator</label>
         <select
           value={operator}
           onChange={(e) => setOperator(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
           {operators.map(op => (
             <option key={op.value} value={op.value}>{op.label}</option>
@@ -212,12 +215,12 @@ export function FilterDialog({ isOpen, onClose, columns, onFilter }: FilterDialo
 
       {operator !== 'is-empty' && operator !== 'is-not-empty' && (
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">Value</label>
+          <label className="block text-sm font-medium mb-3 text-(--color-text)">Value</label>
           <input
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            className="input w-full"
+            className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) placeholder-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
             placeholder="Enter value..."
           />
         </div>
@@ -382,12 +385,13 @@ export function FillMissingDialog({ isOpen, onClose, columns, onFill }: FillMiss
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Fill Missing Values">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -395,11 +399,11 @@ export function FillMissingDialog({ isOpen, onClose, columns, onFill }: FillMiss
       </div>
 
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Method</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Method</label>
         <select
           value={method}
           onChange={(e) => setMethod(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
           {methods.map(m => (
             <option key={m.value} value={m.value}>{m.label}</option>
@@ -409,12 +413,12 @@ export function FillMissingDialog({ isOpen, onClose, columns, onFill }: FillMiss
 
       {method === 'custom' && (
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2">Custom Value</label>
+          <label className="block text-sm font-medium mb-3 text-(--color-text)">Custom Value</label>
           <input
             type="text"
             value={customValue}
             onChange={(e) => setCustomValue(e.target.value)}
-            className="input w-full"
+            className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) placeholder-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
             placeholder="Enter custom value..."
           />
         </div>
@@ -453,12 +457,13 @@ export function TextTransformDialog({ isOpen, onClose, columns, onTransform }: T
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Transform Text">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -508,12 +513,13 @@ export function SplitColumnDialog({ isOpen, onClose, columns, onSplit }: SplitCo
   return (
     <DialogContainer isOpen={isOpen} onClose={onClose} title="Split Column">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2">Column</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Column</label>
         <select
           value={selectedColumn}
           onChange={(e) => setSelectedColumn(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
         >
+          <option value="">-- Select a column --</option>
           {columns.map(col => (
             <option key={col} value={col}>{col}</option>
           ))}
@@ -521,12 +527,12 @@ export function SplitColumnDialog({ isOpen, onClose, columns, onSplit }: SplitCo
       </div>
 
       <div className="mb-6">
-        <label className="block text-sm font-medium mb-2">Delimiter</label>
+        <label className="block text-sm font-medium mb-3 text-(--color-text)">Delimiter</label>
         <input
           type="text"
           value={delimiter}
           onChange={(e) => setDelimiter(e.target.value)}
-          className="input w-full"
+          className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) placeholder-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
           placeholder="Enter delimiter (e.g., space, comma, |)"
         />
         <p className="text-xs text-(--color-text-secondary) mt-1">
@@ -612,7 +618,7 @@ export function GroupByDialog({ isOpen, onClose, columns, onGroup }: GroupByDial
             <select
               value={agg.operation}
               onChange={(e) => updateAggregation(index, 'operation', e.target.value)}
-              className="input flex-1"
+              className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary) flex-1"
             >
               {operations.map(op => (
                 <option key={op} value={op}>{op.toUpperCase()}</option>
@@ -621,8 +627,9 @@ export function GroupByDialog({ isOpen, onClose, columns, onGroup }: GroupByDial
             <select
               value={agg.column}
               onChange={(e) => updateAggregation(index, 'column', e.target.value)}
-              className="input flex-1"
+              className="w-full px-3 py-2 bg-(--color-bg-secondary) border border-(--color-border) rounded-lg text-(--color-text) focus:outline-none focus:ring-2 focus:ring-(--color-primary) flex-1"
             >
+              <option value="">-- Select column --</option>
               {columns.map(col => (
                 <option key={col} value={col}>{col}</option>
               ))}
